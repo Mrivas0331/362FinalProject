@@ -11,7 +11,7 @@ storage.init();
 const app = express();
 const port = 5500;
 app.use(express.static(path.join(__dirname, "public")));
-app.get("/", (req, res) => {
+app.get("/index.html", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 app.use(express.json());
