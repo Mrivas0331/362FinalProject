@@ -19,7 +19,7 @@ Project was created by:
 
 4. To run the application, simply enter "npm run dev" in the terminal, a message should pop up saying "Server is running on http://localhost:5500"
 
-5. Either click (here)[http://localhost:5500], or enter the full "http://localhost:5500" to see the frontend
+5. Either click [here](http://localhost:5500), or enter the full link provided to see the frontend
 
 6. Everything else is a WIP
 
