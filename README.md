@@ -10,3 +10,6 @@ Project was created by:
 - Jacob Vasquez
 - Marco Macias
 - Joseph Salazar
+
+
+dbms documentation (delete this line): https://www.npmjs.com/package/node-persist
