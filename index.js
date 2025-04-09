@@ -1,12 +1,12 @@
 import express from "express";
-import NodePersist from "node-persist";
+//import NodePersist from "node-persist";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const storage = NodePersist.create();
-storage.init();
+//const storage = NodePersist.create();
+//storage.init();
 
 const app = express();
 const port = 5500;
