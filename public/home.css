@@ -8,6 +8,7 @@
 }
 
 .header {
+  width: 100%;
   background-color: #dadcdd;
   padding: 20px;
   display: flex;
@@ -128,4 +129,26 @@
 .about {
    /* color:aqua;*/
     background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header ul li {
+    margin: 5px 0;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 }
