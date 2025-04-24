@@ -1,11 +1,9 @@
-
-*
-
-{  margin: 0;
-  font-family: sans-serif;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
 }
 
 .header {
@@ -30,24 +28,24 @@
 }
 
 
-.header ul a:hover{
+.header ul a:hover {
   border-radius: 30px;
-  background-color: #f6f6f6; 
-  box-shadow: 0 0 2px rgba(0,0,0, 0.75);
+  background-color: #f6f6f6;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
 
 
-.fa-cart-shopping{
+.fa-cart-shopping {
   font-size: 20px;
   color: #333;
- 
+
   cursor: pointer;
 }
 
 
 .search {
- 
+
 
   width: max-content;
   display: flex;
@@ -61,12 +59,11 @@
 
 .search:hover,
 .search:focus-within {
-  box-shadow: 0 0 2px rgba(0,0,0, 0.75);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
 .search-input {
   font-size: 16px;
-  font-family: 'Lexend', sans-serif;
   margin-left: 14px;
   color: #333333;
   outline: none;
@@ -84,52 +81,60 @@
   display: flex;
   gap: 10px;
   list-style: none;
-  margin-right: auto; 
+  margin-right: auto;
 }
 
 
 .fa-cart-shopping {
   font-size: 20px;
-  padding: 10px; 
+  padding: 10px;
   border-radius: 50%;
   transition: background-color 0.3s ease, color 0.3s ease,
-  box-shadow 0.25s;
+    box-shadow 0.25s;
 }
 
 .fa-cart-shopping:hover {
   background-color: #f6f6f6;
-  box-shadow: 0 0 2px rgba(0,0,0, 0.75);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
 .about {
-   /* color:aqua;*/
-    background-color: #000;
+  /* color:aqua;*/
+  background-color: #000;
 }
 
-.homepage
-{
- 
-  
-  background-image: url("../images/girl.png");
-  
+.homepage {
+
+
+  background-image: url("../images/products/girl.png");
+
   width: 100%;
   height: 138vh;
-  
+
   background-size: cover;
 
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  
+
 }
 
-.content{
+.content {
   margin-left: 10%;
 
 }
 
-.content button{
+.content p {
+  margin-top: 5px;
+  font-weight: 400;
+
+
+}
+
+.content button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   background-color: #000;
   color: #fff;
   padding: 10px 20px;
@@ -138,7 +143,7 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease,
-  box-shadow 0.25s;
+    box-shadow 0.25s;
 }
 
 .popular-products {
@@ -153,7 +158,7 @@
   margin-top: 50px;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 
   position: relative;
@@ -164,24 +169,24 @@
 }
 
 
-.row{
+.row {
 
   display: flex;
-  
-  gap: 80px; 
+
+  gap: 80px;
   margin-left: 20px;
   margin-right: 20px;
-  
 
-  
+
+
 }
 
-.product img{
+.product img {
   width: 350px;
   height: 100%;
- 
 
-  
+
+
 
   object-fit: cover;
 
@@ -191,11 +196,13 @@
 
   transition: 0.3s all;
 
-  
-  
+
+
 }
 
-.product button{
+.product button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   background-color: #000;
   color: #fff;
   padding: 10px 20px;
@@ -204,7 +211,7 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease,
-  box-shadow 0.25s;
+    box-shadow 0.25s;
 
 
   transform: translateY(20px);
@@ -212,40 +219,197 @@
   transition: 0.5s all;
 }
 
-.product:hover button{
+.product:hover button {
 
-  box-shadow: 0 0 2px rgba(0,0,0, 0.75);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
   transform: translateY(0px);
   opacity: 1;
   transition: 0.7s all;
 }
 
-.product:hover img{
+.product:hover img {
   transform: scale(1.05);
   transition: 0.3 all;
 
-  box-shadow: 0 0 5px rgba(0,0,0, 0.75);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 }
 
 
 
 .product {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  text-align: center; 
-  margin-top: 10px; 
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .product .product-info {
-  margin-top: 20px; 
-  
-  text-align: center; 
+  margin-top: 20px;
 
-  display: flex; 
+  text-align: center;
+
+  display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 }
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.footer-container .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-starts;
+  margin-bottom: 20px;
+  font-size: 27px;
+
+}
+
+
+.footer-container .col h4 {
+  margin-top: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+
+}
+
+.footer-container .col a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #9b9191;
+  margin-bottom: 10px;
+}
+
+.col p strong {
+  color: rgb(0, 0, 0);
+}
+
+.col p {
+  color: #9b9191;
+}
+
+.socials p {
+  color: #000;
+}
+
+.footer-container .logo {
+  margin-bottom: 30px;
+}
+
+.footer-container h4 {
+
+  padding-bottom: 20px;
+}
+
+.footer-container p {
+  font-size: 17px;
+  margin: 0 0 8px 0;
+}
+
+.footer-container a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.socials p {
+  font-size: 20px;
+}
+
+.socials i {
+  font-size: 23px;
+  padding-right: 10px;
+  cursor: pointer;
+
+}
+
+.socials a:first-child:hover {
+  color: #1877F2;
+  transition: color 0.3s ease;
+}
+
+.socials a:nth-child(2):hover {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.socials a:nth-child(3):hover {
+  color: #000;
+  /* instagram gradient color but top part of icon is cut off
+  color: transparent;
+  background-clip: text;
+  background-image:  radial-gradient( #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);  
+  */
+  transition: color 0.3s ease;
+}
+
+
+
+.col-install {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-right: 100px;
+
+}
+
+.col-install h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+}
+
+.col-install p {
+  color: #9b9191;
+  font-size: 15px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+
+}
+
+
+
+
+.col-install img {
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.col-install .row-install {
+  cursor: pointer;
+}
+
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+
+
 
 @media (max-width: 768px) {
   .header {
