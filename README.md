@@ -32,4 +32,5 @@ dbms documentation (delete this line): https://www.npmjs.com/package/node-persis
 
 TODO:
 
-update the products pictures names and prices (I got lazy)
+- update the products pictures names and prices (I got lazy)
+- add toggleable menu to nav bar for smaller screens
