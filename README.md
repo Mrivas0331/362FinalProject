@@ -29,3 +29,7 @@ Project was created by:
 dbms documentation (delete this line): https://www.npmjs.com/package/node-persist
 
 ![webpage-gif](https://github.com/Mrivas0331/362FinalProject/blob/main/current-implementation.gif)
+
+TODO:
+
+update the products pictures names and prices (I got lazy)
