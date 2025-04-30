@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import storage from 'node-persist';
 
 const app = express();
-const PORT = 3000;
+const PORT = 5500;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
