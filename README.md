@@ -4,6 +4,9 @@ This is a final project for CPSC 362 - Software Engineering
 The project is a e-commerce website that should have the following features:
 - Functioning Nav Bar
 - Functioning Login and Signup feature
+- Functioning Catalog Display
+- Capable of Adding and Deleting Products at will
+- Functioning shopping cart (still needs touch ups)
 (To do)
 
 Project was created by:
@@ -25,12 +28,13 @@ Project was created by:
 
 6. Everything else is a WIP
 
-
-dbms documentation (delete this line): https://www.npmjs.com/package/node-persist
+- The project utilizes node-persist for local storage of products
+- Firebase for user login/signup
 
 ![webpage-gif](https://github.com/Mrivas0331/362FinalProject/blob/main/current-implementation.gif)
 
 TODO:
 
-- update the products pictures names and prices (I got lazy)
-- add toggleable menu to nav bar for smaller screens
+- Do the search bar (marco)
+- Do the test cases
+- Try to add cookies to make independent carts
