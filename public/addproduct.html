@@ -44,6 +44,11 @@
     <input id="price" placeholder="Price" type="text"><br>
     <input id="desc" placeholder="Description" type="text"><br>
     <input id="img" placeholder="Image" type="text"><br>
+    <select id="category">
+      <option value="Unisex">Unisex</option>
+      <option value="Mens">Mens</option>
+      <option value="Womens">Womens</option>
+  </select><br>
     <button id="save">Save</button>
     <button id="load">Load</button>
     <button id="delete">Delete</button>
@@ -51,6 +56,7 @@
     <p id="nameout">name</p>
     <p id="priceout">price</p>
     <p id="descout">desc</p>
+    <p id="categoryout">Category</p>
     <img id="imgout" alt="no image" src="/imagery/-Insert_image_here-.svg.png">
 </body>
 <footer class="footer-container">
@@ -87,7 +93,7 @@
       <h4>My Account</h4>
       <a href="cart.html">My Cart</a>
       <a href="https://github.com/Mrivas0331/362FinalProject" target="_blank">Help</a>
-      <a href="logout.html">Log Out</a>
+      <a href="login.html">Log Out</a>
     </div>
   
   
@@ -99,8 +105,7 @@
         <img src="./images/footer/play-store.png" alt="Play Store">
       </div>
       <p>Securely process your payments</p>
-      <img src="./images/footer/payments.png" alt="Payments">
-      </h4>
+      <a href="cart.html"><img src="./images/footer/payments.png" alt="Payments"></a>      </h4>
     </div>
   
     <div class="footer-bottom">

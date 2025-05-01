@@ -78,7 +78,57 @@ app.get('/getAll', async (req, res) => {
         res.status(500).send({error: "fales to load products"});
     }
 });
+app.get('/getMens', async (req, res) => {
+    try {
+        const keys = await storage.keys();
+        const products = [];
+        for (const key of keys) {
+            const value = await storage.getItem(key);
+            if (value?.category?.toLowerCase() === "mens") {
+                products.push({key, value});
+            }
+        }
+        res.send(products);
 
+    } catch (error) {
+        console.error("Error fetching mens: ", error);
+        res.status(500).send({error: "Failed to load men's"});
+    }
+});
+app.get('/getWomens', async (req, res) => {
+    try {
+        const keys = await storage.keys();
+        const products = [];
+        for (const key of keys) {
+            const value = await storage.getItem(key);
+            if (value?.category?.toLowerCase() === "womens") {
+                products.push({key, value});
+            }
+        }
+        res.send(products);
+
+    } catch (error) {
+        console.error("Error fetching womens: ", error);
+        res.status(500).send({error: "Failed to load womens"});
+    }
+});
+app.get('/getUnisex', async (req, res) => {
+    try {
+        const keys = await storage.keys();
+        const products = [];
+        for (const key of keys) {
+            const value = await storage.getItem(key);
+            if (value?.category?.toLowerCase() === "unisex") {
+                products.push({key, value});
+            }
+        }
+        res.send(products);
+
+    } catch (error) {
+        console.error("Error fetching womens: ", error);
+        res.status(500).send({error: "Failed to load womens"});
+    }
+});
 app.get('/getProduct/:key', async (req, res) => {
     const key = req.params.key;
     const value = await storage.getItem(key);

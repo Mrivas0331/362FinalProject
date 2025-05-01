@@ -9,13 +9,15 @@ async function saveData() {
     const name = document.getElementById('name').value;
     const price = parseFloat(document.getElementById('price').value);
     const desc = document.getElementById('desc').value;
+    const category = document.getElementById('category').value;
     const img = document.getElementById('img').value;
 
     const product = {
         name, 
         price, 
         desc, 
-        img
+        img,
+        category
     };
 
     const response = await fetch('/save', {
@@ -42,6 +44,7 @@ async function loadData() {
         document.getElementById('nameout').innerText = `${data.value.name}\n`;
         document.getElementById('priceout').innerText = `${data.value.price}\n`;
         document.getElementById('descout').innerText = `${data.value.desc}\n`;
+        document.getElementById('categoryout').innerText = `${data.value.category}\n`;
         document.getElementById('imgout').src = `${data.value.img}`;
     } else {
         document.getElementById('result').innerText = data.error;
