@@ -1,5 +1,4 @@
 
-window.onload = loadAllProducts;
 async function loadAllProducts() {
     const response = await fetch('/getAll');
     const products = await response.json();
@@ -121,6 +120,62 @@ async function displayUnisex() {
         catalogContainer.appendChild(productLink);
     });
 }
+
+document.addEventListener("DOMContentLoaded", async function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+
+    if (searchQuery) {
+        try {
+            const response = await fetch(`/search?q=${searchQuery}`);
+            if (!response.ok) {
+                throw new Error("Failed to fetch search results");
+            }
+
+            const results = await response.json();
+            displaySearchResults(results);
+        } catch (error) {
+            console.error("Error performing search: ", error);
+            alert("An error occurred while searching. Please try again.");
+        }
+    } else {
+        loadAllProducts(); 
+    }
+});
+
+function displaySearchResults(results) {
+    const catalog = document.getElementById('catalog');
+    catalog.innerHTML = ""; 
+
+    if (results.length === 0) {
+        catalog.innerHTML = "<p>No products found.</p>";
+        return;
+    }
+
+    results.forEach(({ key, product }) => {
+        const productLink = document.createElement('a');
+        productLink.href = `/productpage.html?key=${key}`;
+        productLink.style.textDecoration = 'none';
+        productLink.style.color = 'inherit';
+
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+
+        
+
+        productDiv.innerHTML = `
+            <img src="${product.img}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.desc}</p>
+            <p>$${product.price}</p>
+        `;
+
+        productLink.append(productDiv);
+        catalog.appendChild(productLink);
+    });
+}
+
 
 async function displayAll() {
     loadAllProducts();
