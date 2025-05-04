@@ -1,0 +1,41 @@
+.login-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 5%;
+    margin-left: 10%;    
+
+
+}
+
+.login-container input {
+
+   width: 85%;
+    height: 20px;
+    
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+
+
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(129, 129, 241);
+}
+
+.login-container input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.login-container input:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.signup {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

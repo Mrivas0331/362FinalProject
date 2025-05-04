@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WearWell.Co Login</title>
     <script type="module" src="./login.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Login Here:</h1>
+    <h1> WearWell.co</h1>
+    <div class = "menu">
+    <h1>Login</h1>
     <br>
-        <div>
+        <div class = "login-container">
             <input required type="text" name="username" id="username-in" placeholder="Username"> <br>
             <input required type="password" name="password" id="password-in" placeholder="Password"> <br>
         </div>
@@ -17,5 +24,10 @@
     <a href="./index.html">
         <button type="submit">Back</button>
     </a>
+
+    <div class = "signup">
+        <p>Don't have an account? Create one <a href="./signup.html">here</a></p>
+        </div>
+    </div>
 </body>
 </html>
