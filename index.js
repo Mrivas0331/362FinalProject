@@ -150,7 +150,29 @@ app.get('/getProduct/:key', async (req, res) => {
     }
     res.json({key, value});
 });
+app.get('/search', async (req, res) => {
+    const query = req.query.q?.toLowerCase(); 
+    if (!query) {
+        return res.status(400).send({ error: "Search query is required" });
+    }
 
+    try {
+        const keys = await storage.keys(); 
+        const results = [];
+
+        for (const key of keys) {
+            const product = await storage.getItem(key);
+            if (product?.name?.toLowerCase().includes(query)) {
+                results.push({ key, product });
+            }
+        }
+
+        res.send(results); 
+    } catch (error) {
+        console.error("Error searching products: ", error);
+        res.status(500).send({ error: "Failed to search products" });
+    }
+});
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
