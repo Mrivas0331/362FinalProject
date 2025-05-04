@@ -16,6 +16,7 @@ The project is a e-commerce website that should have the following features:
 - Jacob Vasquez
 - Marco Macias
 
+## How to Use:
 1. In order to properly use this, you must first enter git clone the repo into your proper directory
 
 2. Ensure Node.js is already installed, as you'll need npm
@@ -25,6 +26,10 @@ The project is a e-commerce website that should have the following features:
 4. To run the application, simply enter "npm run dev" in the terminal, a message should pop up saying "Server is running on http://localhost:5500"
 
 5. Either click [here](http://localhost:5500), or enter the full link provided to see the frontend
+
+6. Use guest login if you cannot load the firebase (in environment file)
+
+7. Run test cases by doing "npm test", covers all express backend routes
 
 - The project utilizes node-persist for local storage of products
 - Firebase for user login/signup
