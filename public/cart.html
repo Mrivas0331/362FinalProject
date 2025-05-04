@@ -54,6 +54,24 @@
     border-radius: 4px;
     margin-top: 20px;
   }
+  #checkout-btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  #place-order {
+    background: coral;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
 </style>
 </head>
 <div class="header">
@@ -82,8 +100,8 @@
   <a href="products.html"><button>Back to catalog</button></a>
   <h1>Cart</h1>
   <div id="cart"></div>
-  <button id="clear-cart">Clear cart</button>
   <button id="checkout-btn">Checkout</button>
+  <button id="clear-cart">Clear cart</button>
 
   <div id="checkout-section" style="display: none; margin-top: 20px;">
     <h2>Checkout</h2>
@@ -93,6 +111,7 @@
     <input placeholder="Card Number"><br><br>
     <input placeholder="CVV"><br><br>
     <button id="place-order">Place Order</button>
+    <br>
   </div>
 
 
@@ -130,7 +149,7 @@
   <div class="col">
     <h4>My Account</h4>
     <a href="cart.html">My Cart</a>
-    <li><a href="orders.html">My Orders</a></li>
+    <a href="orders.html">My Orders</a>
     <a href="https://github.com/Mrivas0331/362FinalProject" target="_blank">Help</a>
     <a href="login.html">Log Out</a>
   </div>
