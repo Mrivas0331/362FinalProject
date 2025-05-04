@@ -1,0 +1,96 @@
+body h1{
+    font-family: 'Lexend', sans-serif;
+    font-size: 25px;
+}
+
+
+
+.menu {
+    font-family: 'Lexend', sans-serif;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+
+    border-radius: 5px;
+    max-width: 40%;
+    margin: 5% auto;
+
+    height: 80vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.menu h1 {
+
+    text-decoration: underline;
+    text-decoration-color: rgb(129, 129, 241);
+    
+    margin-top: 50px;
+    font-size: 40px;
+    color: #333;
+    
+
+
+}
+
+.menu h2 {
+
+    text-decoration: underline;
+    text-decoration-color: rgb(129, 129, 241);
+    text-decoration-thickness: 2px;
+    color: #333;
+    font-size: 18px;
+    margin-top: -20px;
+    font-size: 15px;
+
+
+
+}
+
+.signup-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 5%;
+    margin-left: 10%;    
+
+
+}
+
+.signup-container input {
+
+   width: 85%;
+    height: 20px;
+    
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+
+
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(129, 129, 241);
+}
+
+.signup-container input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.signup-container input:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+body button {
+    background-color: rgb(129, 129, 241);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}

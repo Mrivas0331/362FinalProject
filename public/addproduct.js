@@ -40,11 +40,11 @@ async function loadData() {
     const response = await fetch(`/get/${key}`);
     const data = await response.json();
     if (response.ok) {
-        document.getElementById('keyout').innerText = `Key: ${data.key}\n`;
-        document.getElementById('nameout').innerText = `Name: ${data.value.name}\n`;
-        document.getElementById('priceout').innerText = `Price: $${data.value.price}\n`;
-        document.getElementById('descout').innerText = `Desc: ${data.value.desc}\n`;
-        document.getElementById('categoryout').innerText = `Cateogry: ${data.value.category}\n`;
+        document.getElementById('keyout').childNodes[1].nodeValue = ` ${data.key}`;
+        document.getElementById('nameout').childNodes[1].nodeValue = ` ${data.value.name}`;
+        document.getElementById('priceout').childNodes[1].nodeValue = ` $${data.value.price}`;
+        document.getElementById('descout').childNodes[1].nodeValue = ` ${data.value.desc}`;
+        document.getElementById('categoryout').childNodes[1].nodeValue = ` ${data.value.category}`;
         document.getElementById('imgout').src = `${data.value.img}`;
     } else {
         document.getElementById('result').innerText = data.error;

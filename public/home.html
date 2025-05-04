@@ -11,14 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+
+   
 </head>
 
 
 <body>
-    <div class="header">
+    <nav class="header">
         <h1 class="logo">WearWell</h1>
-        <nav class="nav-bar">
+        <div class = "toggle-menu" id = "toggle-menu">
+            <i class="fa-solid fa-bars nav_burger"></i>
+            <i class = "fa-solid fa-xmark nav_close"></i>
+        </div>
+     
+        <div class="nav-bar" id="nav-bar">
             <ul class="nav-list">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -27,17 +33,19 @@
                 <li><a href="../index.html">Log Out</a></li>
             </ul>
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input class="search-input" type="search" placeholder="Search" product-search>
+                <i class="fa-solid fa-magnifying-glass" onclick = "window.location.href= 'products.html'"></i>
+                <input class="search-input" id = "search-input" type="form" placeholder="Search" data-search>
             </div>
             <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </nav>
 
-    </div>
-
+           
+            
+        </div>
+        
+    </nav>
 
     <section class="home">
-        <img src="./images/products/girl.png" alt="Homepage Image" class="homepage-image">
+        <img src="../images/products/girl.png" alt="Homepage Image" class="homepage-image">
         <div class="homepage">
             <div class="content">
                 <h1>Welcome to WearWell</h1>
@@ -52,16 +60,16 @@
 
         <div class="popular-products">
 
+            
             <div class="text-center">
                 <h3> Our Popular Products</h3>
                 <hr>
                 <p>Check out our most popular products on WearWell</p>
 
             </div>
-
             <div class="row">
                 <div class="product">
-                    <img src="./images/products/dress.png" alt="Popular Product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
 
                     <section class="product-info">
                         <h3>White T-Shirt</h3>
@@ -71,18 +79,7 @@
                 </div>
 
                 <div class="product">
-                    <img src="./images/products/jeans2.png" alt="Popular Product">
-
-                    <section class="product-info">
-                        <h3>White T-Shirt</h3>
-                        <p>$20.00</p>
-                        <button class="add-to-cart-button">Add to Cart</button>
-                    </section>
-                </div>
-
-
-                <div class="product">
-                    <img src="./images/products/jeans2.png" alt="Popular Product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
 
                     <section class="product-info">
                         <h3>White T-Shirt</h3>
@@ -93,7 +90,63 @@
 
 
                 <div class="product">
-                    <img src="./images/products/dress.png" alt="Popular Product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                    <section class="product-info">
+                        <h3>White T-Shirt</h3>
+                        <p>$20.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </section>
+                </div>
+
+
+                <div class="product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                    <section class="product-info">
+                        <h3>White T-Shirt</h3>
+                        <p>$20.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </section>
+                </div>
+
+
+                <div class="product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                    <section class="product-info">
+                        <h3>White T-Shirt</h3>
+                        <p>$20.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </section>
+                </div>
+
+
+                <div class="product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                    <section class="product-info">
+                        <h3>White T-Shirt</h3>
+                        <p>$20.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </section>
+                </div>
+
+
+                <div class="product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                    <section class="product-info">
+                        <h3>White T-Shirt</h3>
+                        <p>$20.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </section>
+                </div>
+
+
+
+                <div class="product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
 
                     <section class="product-info">
                         <h3>White T-Shirt</h3>
@@ -107,65 +160,68 @@
         </div>
 
     </section>
-</body>
 
+ 
 
-
-<footer class="footer-container">
-    <div class="col">
-        <h3>WearWell</h3>
-        <h4> Contact</h4>
-        <p><strong>Address:</strong> 123 Fake St, Fullerton, CA 12345</p>
-        <p><strong>Phone:</strong> (123) 456-7890</p>
-        <p><strong>Hours:</strong> 10:00am - 8:00pm, Mon-Sun</p>
-
-
-        <div class="socials">
-            <p>Follow us</p>
-            <div class="icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.instagram.com/mrivasss23/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    
+    
+    
+    <footer class="footer-container">
+        <div class="col">
+            <h3>WearWell</h3>
+            <h4> Contact</h4>
+            <p><strong>Address:</strong> 123 Fake St, Fullerton, CA 12345</p>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p><strong>Hours:</strong> 10:00am - 8:00pm, Mon-Sun</p>
+            
+            
+            <div class="socials">
+                <p>Follow us</p>
+                <div class="icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
+            
+            
         </div>
-
-
-    </div>
-
-    <div class="col">
-        <h4>About</h4>
-        <a href="about.html">About Us</a>
-        <a href="terms-privacy.html">Terms of Service</a>
-        <a href="terms-privacy.html">Privacy Policy</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
-
-
-    <div class="col">
-        <h4>My Account</h4>
-        <a href="cart.html">My Cart</a>
-        <a href="https://github.com/Mrivas0331/362FinalProject" target="_blank">Help</a>
-        <a href="login.html">Log Out</a>
-    </div>
-
-
-    <div class="col-install">
-        <h4> Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row-install">
-            <img src="./images/footer/app-store.png" alt="App Store">
-            <img src="./images/footer/play-store.png" alt="Play Store">
+        
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
         </div>
-        <p>Securely process your payments</p>
-        <a href="cart.html"><img src="./images/footer/payments.png" alt="Payments"></a>
+        
+        
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="cart.html">My Cart</a>
+            <a href="help.html">Help</a>
+            <a href="logout.html">Log Out</a>
+        </div>
+        
+        
+        <div class="col-install">
+            <h4> Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row-install">
+                <img src="../images/footer/app-store.png" alt="App Store">
+                <img src="../images/footer/play-store.png" alt="Play Store">
+            </div>
+            <p>Securely process your payments</p>
+            <img src="../images/footer/payments.png" alt="Payments">
         </h4>
     </div>
-
+    
     <div class="footer-bottom">
         <p>&copy; 2025 WearWell. All rights reserved.</p>
     </div>
-    <script src = "./search.js"></script>
+    
 </footer>
-
+<script src = "./script.js"></script>
+</body>
 
 </html>
