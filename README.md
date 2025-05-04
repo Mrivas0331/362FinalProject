@@ -6,15 +6,15 @@ The project is a e-commerce website that should have the following features:
 - Functioning Login and Signup feature
 - Functioning Catalog Display
 - Capable of Adding and Deleting Products at will
-- Functioning shopping cart (still needs touch ups)
-(To do)
+- Functioning shopping cart
+- Order placing & tracking
+- Functional Search Bar
 
-Project was created by:
+## Project was created by:
 - Max Rivas
 - Demi Chen
 - Jacob Vasquez
 - Marco Macias
-- Joseph Salazar
 
 1. In order to properly use this, you must first enter git clone the repo into your proper directory
 
@@ -26,15 +26,12 @@ Project was created by:
 
 5. Either click [here](http://localhost:5500), or enter the full link provided to see the frontend
 
-6. Everything else is a WIP
-
 - The project utilizes node-persist for local storage of products
 - Firebase for user login/signup
 
 ![webpage-gif](https://github.com/Mrivas0331/362FinalProject/blob/main/current-implementation.gif)
 
-TODO:
-
-- Do the search bar (marco)
-- Do the test cases
-- Try to add cookies to make independent carts
+Possible Future Implementations:
+- User cookies to save cart data per user
+- User reviews
+- Live hosting
