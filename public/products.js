@@ -6,8 +6,9 @@ async function loadAllProducts() {
 
     const catalogContainer = document.getElementById('catalog');
     catalogContainer.innerHTML ='';
-
-    products.forEach(element => {
+    //only displays products without an item value (only products have it)
+    const filteredProducts = products.filter(element => !element.value.items);
+    filteredProducts.forEach(element => {
         console.log(element.key);
         const productLink = document.createElement('a');
         productLink.href = `/productpage.html?key=${element.key}`;

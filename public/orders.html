@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet">
-    <script src="./productpage.js"></script>
-    <style>
-        .product-image {
-            width: 300px;
-            height: auto;
-        }
-        button {
-            background-color: #f44336;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order History</title>
+  <link rel="stylesheet" href="home.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .order {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    .order h3 {
+      margin-bottom: 10px;
+    }
+    .order-item {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <div class="header">
     <h1 class="logo">WearWell</h1>
@@ -42,26 +39,18 @@
       </ul>
       <div class="search">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input class="search-input" type="search" placeholder="Search">
+        <input class="search-input" type="search" placeholder="Search" product-search>
       </div>
       <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
     </nav>
   
   </div>
 <body>
-    <a href="./products.html"><button>Back to catalog</button></a>
-    <br>
-    <h1>Product Details</h1>
-    <div id="product">
-        <p><strong>UPC: </strong> <span id="keyout"></span></p>
-        <p><strong>Product Name:</strong> <span id="nameout"></span></p>
-        <p><strong>Price:</strong> $<span id="priceout"></span></p>
-        <p><strong>Description:</strong> <span id="descout"></span></p>
-        <p><strong>Category: </strong> <span id="categoryout"></span></p>
-        <img id="imgout" class="product-image" src="" alt="Product Image"/>
-        <br><button id="addtocart">Add item to cart!</button>
-    </div>
-    <div id="result"></div>
+  <a href="home.html"><button>Back to Home</button></a>
+  <h1>Your Orders</h1>
+  <div id="orders-container"></div>
+  <button id="clearOrderHistoryButton">Clear Order History</button>
+  <script src="orders.js"></script>
 </body>
 <footer class="footer-container">
     <div class="col">
@@ -110,7 +99,7 @@
         <img src="./images/footer/play-store.png" alt="Play Store">
       </div>
       <p>Securely process your payments</p>
-      <a href="cart.html"><img src="./images/footer/payments.png" alt="Payments"></a>      </h4>
+      <a href="cart.html"><img src="./images/footer/payments.png" alt="Payments"></a>    </h4>
     </div>
   
     <div class="footer-bottom">

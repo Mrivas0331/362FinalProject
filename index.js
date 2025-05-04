@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import storage from 'node-persist';
 import dotenv from 'dotenv';
-
+//creates express server
 const app = express();
 const PORT = 5500;
 dotenv.config();
@@ -16,12 +16,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 
-
+//initializes local storage
 storage.init()
     .then((res) => {
         console.log("Initialized storage");
     });
-
+//uses firebase details from env file
 app.get('/firebase-config', (req, res) => {
     res.json({
         apiKey: process.env.FIREBASE_API_KEY,
@@ -33,7 +33,7 @@ app.get('/firebase-config', (req, res) => {
         measurementId: process.env.FIREBASE_MEASUREMENT_ID
     });
 });
-
+//defines save route (save products)
 app.post('/save', async (req, res) => {
     //works here
     const {key, product} = req.body;
@@ -53,6 +53,7 @@ app.post('/save', async (req, res) => {
     }
 });
 // How to catch slug in express
+//defines get route (gets products)
 app.get('/get/:key', async (req, res) => {
     const {key} = req.params;
     console.log(`${key} being displayed`);
@@ -63,7 +64,7 @@ app.get('/get/:key', async (req, res) => {
         res.send({key, value});
     }
 });
-
+//defines delete route (delete [duh] products)
 app.get('/delete/:key', async (req, res) => {
     const {key} = req.params;
     console.log(`${key} was deleted`);
@@ -74,7 +75,7 @@ app.get('/delete/:key', async (req, res) => {
         res.send({message: "key deleted"});
     }
 });
-
+//defines getall route (mostly for the catalog page)
 app.get('/getAll', async (req, res) => {
     try {
         const keys = await storage.keys();
@@ -91,6 +92,7 @@ app.get('/getAll', async (req, res) => {
         res.status(500).send({error: "fales to load products"});
     }
 });
+//defines getMens (for catalog)
 app.get('/getMens', async (req, res) => {
     try {
         const keys = await storage.keys();
@@ -108,6 +110,8 @@ app.get('/getMens', async (req, res) => {
         res.status(500).send({error: "Failed to load men's"});
     }
 });
+//defines getWomens (for catalog)
+
 app.get('/getWomens', async (req, res) => {
     try {
         const keys = await storage.keys();
@@ -125,6 +129,8 @@ app.get('/getWomens', async (req, res) => {
         res.status(500).send({error: "Failed to load womens"});
     }
 });
+//defines getUnisex (for catalog)
+
 app.get('/getUnisex', async (req, res) => {
     try {
         const keys = await storage.keys();
@@ -142,6 +148,7 @@ app.get('/getUnisex', async (req, res) => {
         res.status(500).send({error: "Failed to load womens"});
     }
 });
+//defines getproductkey (for the individual product pages)
 app.get('/getProduct/:key', async (req, res) => {
     const key = req.params.key;
     const value = await storage.getItem(key);
@@ -149,6 +156,58 @@ app.get('/getProduct/:key', async (req, res) => {
         return res.status(404).json({error: 'Product not found'});
     }
     res.json({key, value});
+});
+//defines place order route
+app.post('/placeOrder', async (req, res) => {
+    const order = req.body;
+  
+    if (!order.name || !order.address || !order.email || !order.items || order.items.length === 0) {
+      return res.status(400).json({ error: "Incomplete order data" });
+    }
+  
+    const orderKey = `order-${Date.now()}`;
+    try {
+      await storage.setItem(orderKey, order);
+      res.json({ message: "Order placed" });
+    } catch (err) {
+      console.error("Save error:", err);
+      res.status(500).json({ error: "Failed to save order" });
+    }
+  });
+  //defines getorder route (for orders page)
+app.get('/getOrders', async (req, res) => {
+    try {
+        const keys = await storage.keys();
+        const orders = [];
+
+        for (const key of keys) {
+            if (key.startsWith('order-')) {
+                const order = await storage.getItem(key);
+                orders.push({ key, ...order });
+            }
+        }
+
+        console.log("Fetched Orders:", orders); // Add this log
+        res.json(orders);
+    } catch (err) {
+        console.error("Load error:", err);
+        res.status(500).json({ error: "Failed to load orders" });
+    }
+});
+// defines clearorder route (to prevent clogging the page)
+  app.delete('/clearOrderHistory', async (req, res) => {
+    try {
+        const keys = await storage.keys();
+        for (const key of keys) {
+            if (key.startsWith('order-')) { // Only remove items that are orders
+                await storage.removeItem(key);
+            }
+        }
+        res.json({ success: true });
+    } catch (error) {
+        console.error("Error clearing order history: ", error);
+        res.status(500).json({ success: false, message: "Failed to clear order history" });
+    }
 });
 app.get('/search', async (req, res) => {
     const query = req.query.q?.toLowerCase(); 
