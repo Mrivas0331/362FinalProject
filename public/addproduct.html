@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet">
     <script type="module" src="addproduct.js"></script>
+    <link rel="stylesheet" href="addproduct.css">
 </head>
 <div class="header">
     <h1 class="logo">WearWell</h1>
@@ -37,27 +38,47 @@
   
   </div>
 <body>
+
+  <section class = "home">
+
     <a href="./products.html"><button>catalogue</button></a>
+    <div class = "text-center"
     <h1>Load and save</h1>
+    </div>
+
+
+  <div class = "addproduct-container">
     <input id="key" placeholder="Key" type="text"><br>
     <input id="name" placeholder="Name" type="text"><br>
     <input id="price" placeholder="Price" type="text"><br>
     <input id="desc" placeholder="Description" type="text"><br>
     <input id="img" placeholder="Image" type="text"><br>
-    <select id="category">
+    <select id="category" class = "category">
       <option value="Unisex">Unisex</option>
       <option value="Mens">Mens</option>
       <option value="Womens">Womens</option>
   </select><br>
-    <button id="save">Save</button>
-    <button id="load">Load</button>
-    <button id="delete">Delete</button>
+  
+</div>
+
+<div class = "save-load">
+<button id="save">Save</button>
+<button id="load">Load</button>
+<button id="delete">Delete</button>
+</div>
+
+
+    <div class = "product-attributes">
+    <img id="imgout" class = "imgout" alt="no image" src="/imagery/-Insert_image_here-.svg.png">
     <p id="keyout">key</p>
     <p id="nameout">name</p>
     <p id="priceout">price</p>
     <p id="descout">desc</p>
     <p id="categoryout">Category</p>
-    <img id="imgout" alt="no image" src="/imagery/-Insert_image_here-.svg.png">
+  </div>
+
+  </section>
+
 </body>
 <footer class="footer-container">
     <div class="col">
