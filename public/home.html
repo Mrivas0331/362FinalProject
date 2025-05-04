@@ -15,9 +15,14 @@
 
 
 <body>
-    <div class="header">
+    <nav class="header">
         <h1 class="logo">WearWell</h1>
-        <nav class="nav-bar">
+        <div class = "toggle-menu" id = "toggle-menu">
+            <i class="fa-solid fa-bars nav_burger"></i>
+            <i class = "fa-solid fa-xmark nav_close"></i>
+        </div>
+     
+        <div class="nav-bar" id="nav-bar">
             <ul class="nav-list">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -27,17 +32,16 @@
                 <li><a href="../index.html">Log Out</a></li>
             </ul>
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input class="search-input" type="search" placeholder="Search" product-search>
+                <i class="fa-solid fa-magnifying-glass" onclick = "window.location.href= 'products.html'"></i>
+                <input class="search-input" id = "search-input" type="form" placeholder="Search" product-search>
             </div>
             <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </nav>
-
-    </div>
-
+        </div>
+    </nav>
+</body>
 
     <section class="home">
-        <img src="./images/products/girl.png" alt="Homepage Image" class="homepage-image">
+        <img src="../images/products/girl.png" alt="Homepage Image" class="homepage-image">
         <div class="homepage">
             <div class="content">
                 <h1>Welcome to WearWell</h1>
@@ -61,7 +65,7 @@
 
             <div class="row">
                 <div class="product">
-                    <img src="./images/products/dress.png" alt="Popular Product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
 
                     <section class="product-info">
                         <h3>White T-Shirt</h3>
@@ -71,18 +75,7 @@
                 </div>
 
                 <div class="product">
-                    <img src="./images/products/jeans2.png" alt="Popular Product">
-
-                    <section class="product-info">
-                        <h3>White T-Shirt</h3>
-                        <p>$20.00</p>
-                        <button class="add-to-cart-button">Add to Cart</button>
-                    </section>
-                </div>
-
-
-                <div class="product">
-                    <img src="./images/products/jeans2.png" alt="Popular Product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
 
                     <section class="product-info">
                         <h3>White T-Shirt</h3>
@@ -93,7 +86,7 @@
 
 
                 <div class="product">
-                    <img src="./images/products/dress.png" alt="Popular Product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
 
                     <section class="product-info">
                         <h3>White T-Shirt</h3>
@@ -102,15 +95,54 @@
                     </section>
                 </div>
 
+
+                <div class="product">
+                    <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                    <section class="product-info">
+                        <h3>White T-Shirt</h3>
+                        <p>$20.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </section>
+                </div>
+
+            <div class="product">
+                <img src="../images/products/jeans2.png" alt="Popular Product">
+
+                <section class="product-info">
+                    <h3>White T-Shirt</h3>
+                    <p>$20.00</p>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </section>
+            </div>
+            <div class="product">
+                <img src="../images/products/jeans2.png" alt="Popular Product">
+                <section class="product-info">
+                    <h3>White T-Shirt</h3>
+                    <p>$20.00</p>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </section>
+            </div>
+            <div class="product">
+                <img src="../images/products/jeans2.png" alt="Popular Product">
+                <section class="product-info">
+                    <h3>White T-Shirt</h3>
+                    <p>$20.00</p>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </section>
+            </div>
+            <div class="product">
+                <img src="../images/products/jeans2.png" alt="Popular Product">
+                <section class="product-info">
+                    <h3>White T-Shirt</h3>
+                    <p>$20.00</p>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </section>
             </div>
 
         </div>
-
-    </section>
-</body>
-
-
-
+    </div>
+</section>
 <footer class="footer-container">
     <div class="col">
         <h3>WearWell</h3>
@@ -144,7 +176,7 @@
     <div class="col">
         <h4>My Account</h4>
         <a href="cart.html">My Cart</a>
-        <li><a href="orders.html">My Orders</a></li>
+        <a href="orders.html">My Orders</a>
         <a href="https://github.com/Mrivas0331/362FinalProject" target="_blank">Help</a>
         <a href="login.html">Log Out</a>
     </div>
