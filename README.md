@@ -1,7 +1,13 @@
 # 362FinalProject
 This is a final project for CPSC 362 - Software Engineering
 
-The project is a e-commerce website that should have the following features:
+## Project was created by:
+- Max Rivas
+- Demi Chen
+- Jacob Vasquez
+- Marco Macias
+
+Functional Requirements:
 - Functioning Nav Bar
 - Functioning Login and Signup feature
 - Functioning Catalog Display
@@ -10,11 +16,15 @@ The project is a e-commerce website that should have the following features:
 - Order placing & tracking
 - Functional Search Bar
 
-## Project was created by:
-- Max Rivas
-- Demi Chen
-- Jacob Vasquez
-- Marco Macias
+Non-Functional Requirements:
+- User friendly
+- Contact and About Page
+- Terms and Services Page
+- Privacy Page
+- Automated test cases with >90% coverage of backend
+
+Requirement Modelling:
+![Requirement](./images/UML_Diagram.drawio.png)
 
 ## How to Use:
 1. In order to properly use this, you must first enter git clone the repo into your proper directory
