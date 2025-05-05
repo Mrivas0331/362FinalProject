@@ -1,5 +1,4 @@
 
-
 async function loadAllProducts() {
     const response = await fetch('/getAll');
     const products = await response.json();
