@@ -56,6 +56,7 @@
     border-radius: 4px;
     margin-top: 20px;
   }
+<<<<<<< HEAD
 
   .b-button {
       margin-top: 20px;
@@ -75,6 +76,26 @@
       background-color: #91c5ec;
   }
 
+=======
+  #checkout-btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  #place-order {
+    background: coral;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+>>>>>>> 52e1c57a1ec3bf6733459e7107d41971ac04ccd9
 </style>
 </head>
 <div class="header">
@@ -87,6 +108,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="products.html">Products</a></li>
+      <li><a href="orders.html">Orders</a></li>
       <li><a href="../index.html">Log Out</a></li>
     </ul>
     <div class="search">
@@ -109,9 +131,25 @@
   </div>
 
   <div id="cart"></div>
+<<<<<<< HEAD
 
   <div class="p-button-container">
     <button id="clear-cart">Clear cart</button>
+=======
+  <button id="checkout-btn">Checkout</button>
+  <button id="clear-cart">Clear cart</button>
+  <br><br>
+
+  <div id="checkout-section" style="display: none; margin-top: 20px;">
+    <h2>Checkout</h2>
+    <input id="name" placeholder="Full Name" required><br><br>
+    <input id="address" placeholder="Shipping Address" required><br><br>
+    <input id="email" placeholder="Email" required><br><br>
+    <input placeholder="Card Number"><br><br>
+    <input placeholder="CVV"><br><br>
+    <button id="place-order">Place Order</button>
+    <br>
+>>>>>>> 52e1c57a1ec3bf6733459e7107d41971ac04ccd9
   </div>
 
 
@@ -149,6 +187,7 @@
   <div class="col">
     <h4>My Account</h4>
     <a href="cart.html">My Cart</a>
+    <a href="orders.html">My Orders</a>
     <a href="https://github.com/Mrivas0331/362FinalProject" target="_blank">Help</a>
     <a href="login.html">Log Out</a>
   </div>

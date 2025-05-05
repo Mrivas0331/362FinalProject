@@ -15,13 +15,49 @@
       rel="stylesheet">
     <script src="./productpage.js"></script>
     <style>
+<<<<<<< HEAD
 
         #product-details {
+=======
+      #product-details {
+>>>>>>> 52e1c57a1ec3bf6733459e7107d41971ac04ccd9
             display: flex;
             flex-direction: row;
             align-items: flex-start;
             margin-top: 20px;
             justify-content: center;
+<<<<<<< HEAD
+=======
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin-right: 40px;
+        }
+
+        #product-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .product-image {
+            width: 30%;
+            margin-left: 20px;
+        }
+        #addtocart {
+            margin-top: 20px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #addtocart:hover {
+            background-color: #e53935;
+>>>>>>> 52e1c57a1ec3bf6733459e7107d41971ac04ccd9
         }
 
         .product-info {
@@ -61,7 +97,10 @@
             padding: 10px;
             cursor: pointer;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52e1c57a1ec3bf6733459e7107d41971ac04ccd9
         .c-button {
             margin-top: 20px;
             display: flex;
@@ -92,6 +131,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="products.html">Products</a></li>
+        <li><a href="orders.html">Orders</a></li>
         <li><a href="../index.html">Log Out</a></li>
       </ul>
       <div class="search">
@@ -103,6 +143,7 @@
   
   </div>
 <body>
+<<<<<<< HEAD
     <div class="p-button-container">
       <a href="./products.html"><button class="c-button">Back to catalog</button></a>
     </div>
@@ -119,6 +160,24 @@
             <p><strong>Category: </strong> <span id="categoryout"></span></p>
             <button id="addtocart">Add item to cart!</button>
         </div>
+=======
+  <div class="p-button-container">
+    <a href="./products.html"><button class="c-button">Back to catalog</button></a>
+  </div>
+  
+  <section id="page-header">
+    <h1>Product Details</h1>
+  </section>
+  <div id="product-details">
+      <div id="product-info">
+          <p><strong>UPC: </strong> <span id="keyout"></span></p>
+          <p><strong>Product Name:</strong> <span id="nameout"></span></p>
+          <p><strong>Price:</strong> $<span id="priceout"></span></p>
+          <p><strong>Description:</strong> <span id="descout"></span></p>
+          <p><strong>Category: </strong> <span id="categoryout"></span></p>
+          <button id="addtocart">Add item to cart!</button>
+      </div>
+>>>>>>> 52e1c57a1ec3bf6733459e7107d41971ac04ccd9
         <img id="imgout" class="product-image" src="" alt="Product Image"/>
     </div>
     <div id="result"></div>
@@ -156,6 +215,7 @@
     <div class="col">
       <h4>My Account</h4>
       <a href="cart.html">My Cart</a>
+      <a href="orders.html">My Orders</a>
       <a href="https://github.com/Mrivas0331/362FinalProject" target="_blank">Help</a>
       <a href="login.html">Log Out</a>
     </div>

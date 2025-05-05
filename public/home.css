@@ -43,6 +43,9 @@
 	cursor: pointer;
 }
 
+.toggle-menu {
+	display: none;
+}
 
 .search {
 
@@ -104,27 +107,24 @@
 }
 
 .homepage {
-
 	width: 100%;
-	height: 138vh;
-
-
+	min-height: 140vh;
+	/* Use min-height instead of fixed height */
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: flex-start;
-
 }
 
 .homepage-image {
 	width: 100%;
-	height: 138vh;
+	height: 140vh;
+	/* Use relative height */
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -1;
 	object-fit: cover;
-
 	margin-top: 80px;
 }
 
@@ -147,8 +147,10 @@
 
 
 .content {
-	margin-left: 10%;
-
+	margin-left: 5%;
+	/* Use percentage for margin */
+	max-width: 50%;
+	/* Limit the width for better scaling */
 }
 
 .content p {
@@ -175,54 +177,82 @@
 .popular-products {
 	background-color: rgb(247, 215, 174);
 	width: 100%;
-	height: 130vh;
-
+	height: auto;
+	/* Use padding instead of fixed height */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	margin-top: 50px;
+	padding-bottom: 5vw;
 }
 
 .text-center {
 	text-align: center;
 
-	position: relative;
+
+	margin-top: 5vw;
+
 	bottom: 100px;
 	font-size: 25px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-bottom: 5vw;
 }
 
 
 .row {
 
+
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	justify-content: space-evenly;
+	gap: calc(20px + 2vw);
+	/* Use calc for responsive gap */
+
+
+	/* Use percentage for margins */
+	margin: 0 20px 0 20px;
+
+
+
+
+
+
+}
+
+
+.product {
+
 	display: flex;
-
-	gap: 80px;
-	margin-left: 20px;
-	margin-right: 20px;
-
-
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+  
+	
 }
 
 .product img {
-	width: 350px;
-	height: 100%;
-
-
-	object-fit: cover;
-
-	padding: 20px;
-	background-color: #fff;
-	border-radius: 15px;
-
-	transition: 0.3s all;
-
+	width: 100%;
+    height: 500px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 10px;
 
 }
 
-.product button {
+.product-info{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+  
+}
+
+.product-info button {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	background-color: #000;
@@ -277,19 +307,22 @@
 
 
 .footer-container {
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-left: 100px;
-	margin-top: 50px;
+	
+	/* Use padding instead of fixed margins */
 }
 
 .footer-container .col {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-starts;
-	margin-bottom: 20px;
+	flex: 1 1 200px;
+	/* Allow columns to scale */
+	margin: 10px;
+	/* Add spacing between columns */
 	font-size: 27px;
+	flex-direction: column;
+
 
 }
 
@@ -306,6 +339,8 @@
 	text-decoration: none;
 	color: #9b9191;
 	margin-bottom: 10px;
+	flex-direction: flex-start;
+	display: flex;
 }
 
 .col p strong {
@@ -315,6 +350,8 @@
 .col p {
 	color: #9b9191;
 }
+
+
 
 .socials p {
 	color: #000;
@@ -356,6 +393,13 @@
 	font-size: 23px;
 	padding-right: 10px;
 	cursor: pointer;
+
+}
+
+.icons {
+	display: flex;
+	flex-direction: row;
+
 
 }
 
@@ -430,14 +474,14 @@
 @media (max-width: 768px) {
 	.header {
 
-    position: fixed; /* Fix the header at the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+		position: fixed;
+		/* Fix the header at the top */
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
 
-		flex-direction: column;
-		align-items: flex-start;
+
 	}
 
 	.header h1 {
@@ -457,34 +501,106 @@
 	}
 
 	.nav-bar {
+
+
 		
-   display: none;
+		
+		padding-top: 30px;
+
+		opacity: 0;
 		flex-direction: column;
+		/* Stack the nav items vertically */
 		align-items: flex-start;
-	}
-
-	.home {
-		height: auto;
+		/* Align nav items to the left */
+		/* Initially hide the nav bar */
+		position: absolute;
+		/* Position it below the header */
+		top: 100%;
+		/* Place it below the header */
+		left: 0;
+		/* Align to the left */
 		width: 100%;
+		background-color: #ffffff;
+		/* Add a background color */
+		padding-left: 10px;
+		padding-bottom: 5px;
+		transition: background-color .3s ease, opacity .3s ease;
 
-		overflow-x: hidden;
 
 	}
+
+
+	
+
+	.toggle-menu {
+		display: flex;
+		position: relative;
+		width: 32px;
+		height: 32px;
+
+
+	}
+
+	.nav_burger,
+	.nav_close {
+		position: absolute;
+		width: max-content;
+		height: max-content;
+		inset: 0;
+		margin: auto;
+		font-size: 1.25rem;
+		cursor: pointer;
+		transition: opacity .1s, transform .3s;
+	}
+
+
+	.nav_close {
+		opacity: 0;
+	}
+
+	.show-menu {
+		opacity: 1;
+		
+		
+		top: 3.5rem;
+		height: auto;
+		pointer-events: initial;
+	}
+
+	.show-icon .nav_burger {
+		opacity: 0;
+		transform: rotate(90deg);
+		
+	}
+
+	.show-icon .nav_close {
+		opacity: 1;
+		transform: rotate(90deg);
+	}
+
+	.toggle-menu.active+.nav-bar {
+		display: flex;
+		/* Show the nav bar when the menu is active */
+	}
+
+
 
 	.homepage {
 
-		height: 80vh;
+		min-height: 80vh;
+		/* Adjust height for smaller screens */
 
 	}
 
 
 	.homepage-image {
 		height: 75vh;
+		/* Adjust relative height */
 		width: 100%;
 
 		text-align: center;
 
-    margin-top: 50px;
+		margin-top: 60px;
 	}
 
 
@@ -493,7 +609,7 @@
 		height: auto;
 		position: absolute;
 
-    
+
 	}
 
 
@@ -502,10 +618,10 @@
 		height: 35vh;
 		width: 40%;
 
-    margin-left: 5%;
+		margin-left: 5%;
 
- 
-  }
+
+	}
 
 	.homepage .content p {
 		font-size: .9rem;
@@ -533,9 +649,9 @@
 	.row {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		/* Use grid for smaller screens */
 
-		gap: 50px;
-	
+		gap: 20px;
 	}
 
 	.product button {
@@ -545,13 +661,10 @@
 	}
 
 	.product img {
-		width: 100%;
-		
-		height: 100%;
+		max-width: 200px;
+		/* Reduce image size */
+		height: auto;
 
-
-		max-width: 300px;
-		max-height: 300px;
 		object-fit: cover;
 
 		margin-left: 5px;
@@ -576,6 +689,8 @@
 		margin-bottom: 10px;
 	}
 
+	
+
 	.footer-container {
 		display: flex;
 		flex-direction: column;
@@ -587,18 +702,8 @@
 
 	@media screen and (max-width: 460px) {
 		.product img {
-			width: 100%;
-
-			height: 100%;
-
-			padding: 10px 10px;
-
-			max-width: 200px;
-			max-height: 200px;
-
-			object-fit: cover;
-
-
+			max-width: 150px;
+			/* Further reduce image size */
 		}
 
 	}
