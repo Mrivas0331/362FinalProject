@@ -249,7 +249,33 @@ app.get('/search', async (req, res) => {
         console.error("Error searching products: ", error);
         res.status(500).send({ error: "Failed to search products" });
     }
+
+  
+    
 });
+
+app.post('/getSpecificProducts', async (req, res) => {
+    const { keys } = req.body; // Array of product keys to fetch
+    if (!keys || !Array.isArray(keys)) {
+        return res.status(400).send("Invalid keys array");
+    }
+
+    try {
+        const products = [];
+        for (const key of keys) {
+            const product = await storage.getItem(key);
+            if (product) {
+                products.push({ key, value: product });
+            }
+        }
+        res.json(products);
+    } catch (error) {
+        console.error("Error fetching specific products:", error);
+        res.status(500).send("Error fetching products");
+    }
+});
+
+
 // Start the server
 if (process.env.NODE_ENV !== 'test') {
     app.listen(PORT, () => {
