@@ -127,7 +127,22 @@
 	object-fit: cover;
 	margin-top: 80px;
 }
+#page-header h1,
+#page-header p {
+    color: #333333;
+}
 
+#page-header {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 2em;
+}
+
+.p-button-container {
+	display: flex;
+	margin-left: 10%;
+	margin-bottom: 20px 0;
+}
 .content {
 	margin-left: 5%;
 	/* Use percentage for margin */
