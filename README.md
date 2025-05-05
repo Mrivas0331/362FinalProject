@@ -1,7 +1,13 @@
 # 362FinalProject
 This is a final project for CPSC 362 - Software Engineering
 
-The project is a e-commerce website that should have the following features:
+## Project was created by:
+- Max Rivas
+- Demi Chen
+- Jacob Vasquez
+- Marco Macias
+
+Functional Requirements:
 - Functioning Nav Bar
 - Functioning Login and Signup feature
 - Functioning Catalog Display
@@ -10,11 +16,15 @@ The project is a e-commerce website that should have the following features:
 - Order placing & tracking
 - Functional Search Bar
 
-## Project was created by:
-- Max Rivas
-- Demi Chen
-- Jacob Vasquez
-- Marco Macias
+Non-Functional Requirements:
+- User friendly
+- Contact and About Page
+- Terms and Services Page
+- Privacy Page
+- Automated test cases with >90% coverage of backend
+
+Requirement Modelling:
+![Requirement](./images/UML_Diagram.drawio.png)
 
 ## How to Use:
 1. In order to properly use this, you must first enter git clone the repo into your proper directory
@@ -27,11 +37,11 @@ The project is a e-commerce website that should have the following features:
 
 5. Either click [here](http://localhost:5500), or enter the full link provided to see the frontend
 
-6. Use guest login if you cannot load the firebase (in environment file)
+6. Use guest login if you cannot load the firebase (will not be available after launch, just click [here](http://localhost:5500/public/home.html))
 
 7. Run test cases by doing "npm test", covers all express backend routes
 
-- The project utilizes node-persist for local storage of products
+- The project utilizes node-persist for local storage of products and orders
 - Firebase for user login/signup
 
 ![webpage-gif](https://github.com/Mrivas0331/362FinalProject/blob/main/current-implementation.gif)
