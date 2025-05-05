@@ -52,6 +52,24 @@ app.post('/save', async (req, res) => {
         res.status(500).send("error saving data");
     }
 });
+app.post('/set', async (req, res) => {
+    //works here
+    const {key, product} = req.body;
+    //works here
+    if (!key || !product) {
+        console.log("stops")
+        return res.status(400).send("missing key or value");
+    }
+    try {
+        console.log("works");
+        await storage.updateItem(key, product);
+        console.log(`Changed key: ${key}, Product: ${JSON.stringify(product)}`)
+        res.send({message: 'Data saved'});
+    } catch (error) {
+        console.error("Error saving data: ", error);
+        res.status(500).send("error saving data");
+    }
+});
 // How to catch slug in express
 //defines get route (gets products)
 app.get('/get/:key', async (req, res) => {

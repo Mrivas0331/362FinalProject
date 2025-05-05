@@ -2,16 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('save').addEventListener('click', saveData);
     document.getElementById('load').addEventListener('click', loadData);
     document.getElementById('delete').addEventListener('click', deleteData);
+    document.getElementById('set').addEventListener('click', setData);
+
 })
 
 async function saveData() {
     const key = document.getElementById('key').value;
     const name = document.getElementById('name').value;
-    const price = parseFloat(document.getElementById('price').value);
+    const priceRaw = parseFloat(document.getElementById('price').value);
     const desc = document.getElementById('desc').value;
     const category = document.getElementById('category').value;
     const img = document.getElementById('img').value;
-
+    if (!key || !name || isNaN(price) || !desc || !category || !img) {
+        document.getElementById('result').innerText = "Please fill in all fields.";
+        alert("Must fill all fields");
+        return;
+    }
     const product = {
         name, 
         price, 
@@ -34,7 +40,40 @@ async function saveData() {
     const data = await response.json();
     document.getElementById('result').innerText = data.message;
 }
+async function setData() {
+    const key = document.getElementById('key').value;
+    const name = document.getElementById('name').value;
+    const price = parseFloat(document.getElementById('price').value);
+    const desc = document.getElementById('desc').value;
+    const category = document.getElementById('category').value;
+    const img = document.getElementById('img').value;
+    if (!key || !name || isNaN(price) || !desc || !category || !img) {
+        document.getElementById('result').innerText = "Please fill in all fields.";
+        alert("Must fill all fields");
+        return;
+    }
+    const product = {
+        name, 
+        price, 
+        desc, 
+        img,
+        category
+    };
 
+    const response = await fetch('/save', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            key: key,
+            product: product
+        })
+    });
+    
+    const data = await response.json();
+    document.getElementById('result').innerText = data.message;
+}
 async function loadData() {
     const key = document.getElementById('key').value;
     const response = await fetch(`/get/${key}`);
