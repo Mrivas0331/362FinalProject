@@ -37,11 +37,11 @@ Requirement Modelling:
 
 5. Either click [here](http://localhost:5500), or enter the full link provided to see the frontend
 
-6. Use guest login if you cannot load the firebase (in environment file)
+6. Use guest login if you cannot load the firebase (will not be available after launch, just click [here](http://localhost:5500/public/home.html))
 
 7. Run test cases by doing "npm test", covers all express backend routes
 
-- The project utilizes node-persist for local storage of products
+- The project utilizes node-persist for local storage of products and orders
 - Firebase for user login/signup
 
 ![webpage-gif](https://github.com/Mrivas0331/362FinalProject/blob/main/current-implementation.gif)
