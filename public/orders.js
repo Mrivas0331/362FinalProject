@@ -22,7 +22,7 @@ async function loadOrders() {
                 <p><strong>Shipping To:</strong> ${order.address}</p>
                 <p><strong>Email:</strong> ${order.email}</p>
                 <p><strong>Estimated Delivery:</strong> ${deliveryDate}</p>
-                <h4>Items:</h4>
+                <p><strong>Items: </strong></p>
                 <ul>
                 ${order.items.map(item => `<li class="order-item">${item.name} - $${item.price}</li>`).join('')}
                 </ul>
