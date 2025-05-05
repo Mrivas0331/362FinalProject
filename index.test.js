@@ -22,7 +22,32 @@ describe('Product API', () => {
         expect(res.statusCode).toBe(200);
         expect(res.body.message).toBe('Data saved');
     });
+    /*test('should save product data successfully', async () => {
+        const testProduct = {
+            name: "Test Product",
+            price: 19.99,
+            desc: "A great product",
+            category: "gadgets",
+            img: "img/test.jpg"
+        };
 
+        const res = await request(app)
+            .post('/set')
+            .send({ key: "prod123", product: testProduct });
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toEqual({ message: 'Data saved' });
+        expect(storage.updateItem).toHaveBeenCalledWith("prod123", testProduct);
+    });*/
+    test('should return 400 if key or product is missing', async () => {
+        const res1 = await request(app).post('/save').send({ key: 'prod123' }); // Missing product
+        expect(res1.statusCode).toBe(400);
+        expect(res1.text).toBe('missing key or value');
+    
+        const res2 = await request(app).post('/save').send({ product: { name: 'Test' } }); // Missing key
+        expect(res2.statusCode).toBe(400);
+        expect(res2.text).toBe('missing key or value');
+    });
     test('POST /save returns 400 for missing data', async () => {
         const res = await request(app).post('/save').send({});
         expect(res.statusCode).toBe(400);
@@ -410,5 +435,66 @@ describe('Product API', () => {
         });
         expect(res.statusCode).toBe(200); // Assuming backend doesn't validate date format
     });
+
+    test('Returns 400 if keys field is missing', async () => {
+        const res = await request(app)
+            .post('/getSpecificProducts')
+            .send({})
+            .set('Content-Type', 'application/json');
+
+        expect(res.statusCode).toBe(400);
+        expect(res.text).toBe('Invalid keys array');
+    });
+
+    test('Returns 400 if keys is not an array', async () => {
+        const res = await request(app)
+            .post('/getSpecificProducts')
+            .send({ keys: 'not-an-array' })
+            .set('Content-Type', 'application/json');
+
+        expect(res.statusCode).toBe(400);
+        expect(res.text).toBe('Invalid keys array');
+    });
+
+    test('Skips keys not found in storage', async () => {
+        const res = await request(app)
+            .post('/getSpecificProducts')
+            .send({ keys: ['black-shirt', 'nonexistent-product'] })
+            .set('Content-Type', 'application/json');
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body.length).toBe(1);
+        expect(res.body[0].key).toBe('black-shirt');
+    });
+
+    test('Returns empty array for empty keys list', async () => {
+        const res = await request(app)
+            .post('/getSpecificProducts')
+            .send({ keys: [] })
+            .set('Content-Type', 'application/json');
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toEqual([]);
+    });
+    /*jest.mock('./.node-persist/storage', () => ({
+        updateItem: jest.fn(),
+      }));
+    test('should save product data successfully', async () => {
+        const testProduct = {
+            name: "Test Product",
+            price: 19.99,
+            desc: "A great product",
+            category: "gadgets",
+            img: "img/test.jpg"
+        };
+
+        const res = await request(app)
+            .post('/set')
+            .send({ key: "prod123", product: testProduct });
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toEqual({ message: 'Data saved' });
+        expect(storage.updateItem).toHaveBeenCalledWith("prod123", testProduct);
+    });*/
     
 });

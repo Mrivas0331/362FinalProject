@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
 async function saveData() {
     const key = document.getElementById('key').value;
     const name = document.getElementById('name').value;
-    const priceRaw = parseFloat(document.getElementById('price').value);
+    const price = parseFloat(document.getElementById('price').value);
     const desc = document.getElementById('desc').value;
     const category = document.getElementById('category').value;
     const img = document.getElementById('img').value;
-    if (!key || !name || isNaN(price) || !desc || !category || !img) {
+    /*if (!key || !name || isNaN(price) || !desc || !category || !img) {
         document.getElementById('result').innerText = "Please fill in all fields.";
         alert("Must fill all fields");
         return;
-    }
+    }*/
     const product = {
         name, 
         price, 
@@ -47,11 +47,11 @@ async function setData() {
     const desc = document.getElementById('desc').value;
     const category = document.getElementById('category').value;
     const img = document.getElementById('img').value;
-    if (!key || !name || isNaN(price) || !desc || !category || !img) {
+    /*if (!key || !name || isNaN(price) || !desc || !category || !img) {
         document.getElementById('result').innerText = "Please fill in all fields.";
         alert("Must fill all fields");
         return;
-    }
+    }*/
     const product = {
         name, 
         price, 
@@ -60,7 +60,7 @@ async function setData() {
         category
     };
 
-    const response = await fetch('/save', {
+    const response = await fetch('/set', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
