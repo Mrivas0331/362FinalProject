@@ -36,28 +36,134 @@
     </nav>
   
   </div>
+
+  <style>
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .form-container input, .form-container select, .form-container button .form-container textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 20px 0;
+      gap: 10px;
+
+    }
+
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+
+    .c-button {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px 0;
+      gap: 10px;
+      background-color: #b9d3e1;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .c-button:hover {
+      background-color: #91c5ec;
+    }
+
+   .display-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .display-container p {
+      margin: 5px 0;
+    }
+
+    .display-container img {
+      max-width: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+  </style>
 <body>
-    <a href="./products.html"><button>catalogue</button></a>
-    <h1>Load and save</h1>
-    <input id="key" placeholder="Key" type="text"><br>
-    <input id="name" placeholder="Name" type="text"><br>
-    <input id="price" placeholder="Price" type="text"><br>
-    <input id="desc" placeholder="Description" type="text"><br>
-    <input id="img" placeholder="Image" type="text"><br>
-    <select id="category">
-      <option value="Unisex">Unisex</option>
-      <option value="Mens">Mens</option>
-      <option value="Womens">Womens</option>
-  </select><br>
-    <button id="save">Save</button>
-    <button id="load">Load</button>
-    <button id="delete">Delete</button>
-    <p id="keyout">key</p>
-    <p id="nameout">name</p>
-    <p id="priceout">price</p>
-    <p id="descout">desc</p>
-    <p id="categoryout">Category</p>
-    <img id="imgout" alt="no image" src="/imagery/-Insert_image_here-.svg.png">
+
+    <div class="p-button-container">
+      <a href="./products.html"><button class="c-button">catalogue</button></a>
+    </div>
+    
+    <section id="page-header">
+      <h1>Load and save</h1>
+      <p style="font-size: 18px;">Enter the product details below:</p>
+    </section>
+
+    <div class="form-container">
+
+      <div class="short-text">
+        <input id="key" placeholder="Key" type="text">
+        <input id="name" placeholder="Name" type="text">
+        <input id="price" placeholder="Price" type="text">
+      </div>
+      
+      <div class="long-text">
+        <textarea id="desc" placeholder="Description" type="text"></textarea>
+        <textarea id="img" placeholder="Image" type="text"></textarea>
+
+      </div>
+      <select id="category">
+        <option value="Unisex">Unisex</option>
+        <option value="Mens">Mens</option>
+        <option value="Womens">Womens</option>
+      </select>
+      
+      <div class="button-container">
+        <button id="save">Save</button>
+        <button id="load">Load</button>
+        <button id="delete">Delete</button>
+      </div>
+
+      <div class="display-container">
+        <div class="text-container">
+          <p id="keyout">key</p>
+          <p id="nameout">name</p>
+          <p id="priceout">price</p>
+          <p id="descout">desc</p>
+          <p id="categoryout">Category</p>
+        </div>
+        
+        <img id="imgout" alt="no image" src="/imagery/-Insert_image_here-.svg.png">
+      </div>
+
+    </div>
 </body>
 <footer class="footer-container">
     <div class="col">

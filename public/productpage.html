@@ -15,16 +15,71 @@
       rel="stylesheet">
     <script src="./productpage.js"></script>
     <style>
+
+        #product-details {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin-right: 40px;
+        }
+
+        #product-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
         .product-image {
             width: 30%;
-            margin-right: 50px;
+            margin-left: 20px;
         }
+
+        #addtocart {
+            margin-top: 20px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #addtocart:hover {
+            background-color: #e53935;
+        }
+
         button {
+
             background-color: #f44336;
             color: white;
             padding: 10px;
             cursor: pointer;
         }
+
+        .c-button {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px 0;
+            gap: 10px;
+            background-color: #b9d3e1;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+          }
+
+          .c-button:hover {
+            background-color: #91c5ec;
+          }
     </style>
 </head>
 <div class="header">
@@ -48,17 +103,23 @@
   
   </div>
 <body>
-    <a href="./products.html"><button>Back to catalog</button></a>
-    <br>
-    <h1>Product Details</h1>
-    <div id="product">
-        <p><strong>UPC: </strong> <span id="keyout"></span></p>
-        <p><strong>Product Name:</strong> <span id="nameout"></span></p>
-        <p><strong>Price:</strong> $<span id="priceout"></span></p>
-        <p><strong>Description:</strong> <span id="descout"></span></p>
-        <p><strong>Category: </strong> <span id="categoryout"></span></p>
+    <div class="p-button-container">
+      <a href="./products.html"><button class="c-button">Back to catalog</button></a>
+    </div>
+    
+    <section id="page-header">
+      <h1>Product Details</h1>
+    </section>
+    <div id="product-details">
+        <div id="product-info">
+            <p><strong>UPC: </strong> <span id="keyout"></span></p>
+            <p><strong>Product Name:</strong> <span id="nameout"></span></p>
+            <p><strong>Price:</strong> $<span id="priceout"></span></p>
+            <p><strong>Description:</strong> <span id="descout"></span></p>
+            <p><strong>Category: </strong> <span id="categoryout"></span></p>
+            <button id="addtocart">Add item to cart!</button>
+        </div>
         <img id="imgout" class="product-image" src="" alt="Product Image"/>
-        <br><button id="addtocart">Add item to cart!</button>
     </div>
     <div id="result"></div>
 </body>

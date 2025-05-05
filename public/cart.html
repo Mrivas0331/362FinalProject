@@ -21,6 +21,8 @@
     padding: 20px;
   }
   .cart-item {
+    margin-left: 200px;
+    margin-right: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,6 +56,25 @@
     border-radius: 4px;
     margin-top: 20px;
   }
+
+  .b-button {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px 0;
+      gap: 10px;
+      background-color: #b9d3e1;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 20px;
+  }
+  .b-button:hover {
+      background-color: #91c5ec;
+  }
+
 </style>
 </head>
 <div class="header">
@@ -78,10 +99,20 @@
 </div>
 
 <body>
-  <a href="products.html"><button>Back to catalog</button></a>
-  <h1>Cart</h1>
+
+  <div class="p-button-container">
+    <a href="products.html"><button class="b-button">Back to catalog</button></a>
+  </div>
+
+  <div id="page-header">
+    <h1>Shopping Cart</h1>
+  </div>
+
   <div id="cart"></div>
-  <button id="clear-cart">Clear cart</button>
+
+  <div class="p-button-container">
+    <button id="clear-cart">Clear cart</button>
+  </div>
 
 
 
